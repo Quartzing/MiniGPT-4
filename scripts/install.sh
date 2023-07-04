@@ -1,6 +1,6 @@
 #!/bin/bash
-# pip install -r requirements.txt
-# pip install -e FastChat
+pip install -r requirements.txt
+pip install -e FastChat
 
 # Prepare dirs
 MODEL_DIR=models
