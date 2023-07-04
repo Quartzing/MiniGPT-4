@@ -1,13 +1,20 @@
 #!/bin/bash
+# Get sub repos
+git lfs install
+git submodule update --init
+
+# Install dependencies
 pip install -r requirements.txt
-pip install -e FastChat
+# pip install -e FastChat
 
 # Prepare dirs
 MODEL_DIR=models
 LLAMA_DIR=$MODEL_DIR/llama
 VICUA_DIR=$MODEL_DIR/vicuna
+MINIGPT4_DIR=$MODEL_DIR/minigpt4
 mkdir -p $LLAMA_DIR
 mkdir -p $VICUA_DIR
+mkdir -p $MINIGPT4_DIR
 
 # Download the original llama model
 readarray -t URL_LIST < scripts/llama_urls.txt
@@ -33,5 +40,9 @@ do
     download_url $url $LLAMA_DIR
 done
 
+# Download MiniGPT4 weights
+echo Downloading MiniGPT4 weights...
+download_url https://drive.google.com/file/d/1RY9jV0dyqLX-o38LrumkKRh6Jtaop58R/view?usp=sharing
+
 # Generate vicuna weights
-python -m fastchat.model.apply_delta --base $LLAMA_DIR  --target $VICUA_DIR  --delta vicuna-13bOR7b-delta-v0/
+python -m fastchat.model.apply_delta --base $LLAMA_DIR  --target $VICUA_DIR  --delta vicuna-7b-delta-v0/
