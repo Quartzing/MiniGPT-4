@@ -1,3 +1,6 @@
 [submodule "FastChat"]
 	path = FastChat
 	url = https://github.com/lm-sys/FastChat.git
+[submodule "vicuna-7b-delta-v0"]
+	path = vicuna-7b-delta-v0
+	url = https://huggingface.co/lmsys/vicuna-7b-delta-v0
