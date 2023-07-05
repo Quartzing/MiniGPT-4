@@ -28,5 +28,6 @@ git -C $VICUA_DIR clone https://huggingface.co/lmsys/vicuna-7b-delta-v0
 download_all_urls $PWD/scripts/llama_urls.txt $LLAMA_DIR
 
 # Generate vicuna weights
-pip install fschat==0.1.1
+git submodule update --init
+pip install -e FastChat
 python -m fastchat.model.apply_delta --base $LLAMA_DIR  --target $OUTPUT_DIR  --delta $VICUA_DIR
