@@ -1,3 +1,4 @@
 models/
 !models/minigpt4/
 !models/llama/tokenizer_config.json
+__pycache__/
