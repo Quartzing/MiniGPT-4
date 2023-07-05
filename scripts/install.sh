@@ -20,7 +20,7 @@ mkdir -p $OUTPUT_DIR
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 apt-get install git-lfs
 git lfs install
-git -C $VICUA_DIR clone https://huggingface.co/lmsys/vicuna-7b-delta-v0
+git -C $VICUNA_DIR clone https://huggingface.co/lmsys/vicuna-7b-delta-v0
 
 # Download the original llama model weights
 # pip install pyllama
@@ -30,4 +30,4 @@ download_all_urls $PWD/scripts/llama_urls.txt $LLAMA_DIR
 # Generate vicuna weights
 git submodule update --init
 pip install -e FastChat
-python -m fastchat.model.apply_delta --base $LLAMA_DIR  --target $OUTPUT_DIR  --delta $VICUA_DIR
+python -m fastchat.model.apply_delta --base-model-path $LLAMA_DIR  --target-model-path $OUTPUT_DIR  --delta-path $VICUNA_DIR
