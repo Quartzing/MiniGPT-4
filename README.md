@@ -1,3 +1,11 @@
+# Quick start
+1. `conda create -n prepare python=3.10 && conda init bash && bash`
+2. `conda activate prepare && bash scripts/prepare_weights.sh`
+3. `conda env create -n minigpt4 python=3.10 && conda init bash && bash`
+4. `conda activate minigpt4 && bash scripts/install.sh`
+5. `bash scripts/demo.sh`
+then the port is forwarded to `http://127.0.0.1:7860/` and open the browser.
+
 # On gpushare
 Enable proxy:
 `export https_proxy=http://turbo.gpushare.com:30000 http_proxy=http://turbo.gpushare.com:30000`
