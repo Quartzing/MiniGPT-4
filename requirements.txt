@@ -48,3 +48,9 @@ notebook
 gradio==3.24.1
 gradio-client==0.0.8
 wandb
+
+# FastChat
+fschat
+
+# Pyllama
+pyllama
