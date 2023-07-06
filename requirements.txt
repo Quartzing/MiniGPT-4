@@ -47,4 +47,5 @@ umap-learn
 notebook
 gradio==3.24.1
 gradio-client==0.0.8
+typing_extensions==4.7.1
 wandb

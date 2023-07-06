@@ -1,12 +1,19 @@
 # Quick start
+## Prepare model weights
+### Vicuna 7b v0
 1. `conda create -n prepare python=3.10 && conda init bash && bash`
 2. `conda activate prepare && bash scripts/prepare_weights.sh`
-3. `conda env create -n minigpt4 python=3.10 && conda init bash && bash`
-4. `conda activate minigpt4 && bash scripts/install.sh`
-5. `bash scripts/demo.sh`
+
+### Vicuna 7b v1.1
+1. `bash script/vicuna-7b-v1.1.sh`
+
+## Launch demo
+1. `conda env create -n minigpt4 python=3.10 && conda init bash && bash`
+2. `conda activate minigpt4 && bash scripts/install.sh`
+3. `bash scripts/demo.sh`
 then the port is forwarded to `http://127.0.0.1:7860/` and open the browser.
 
-# On gpushare
+## Appendix: Tricks On gpushare
 Enable proxy:
 `export https_proxy=http://turbo.gpushare.com:30000 http_proxy=http://turbo.gpushare.com:30000`
 
