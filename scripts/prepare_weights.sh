@@ -16,6 +16,7 @@ OUTPUT_DIR=$MODEL_DIR/output
 # Create the directories if they do not already exist
 mkdir -p $LLAMA_DIR
 if [ ! -d "$OUTPUT_DIR" ]; then
+  echo -e "\033[1m\033[33mWARNING: The directory $OUTPUT_DIR does not exist. Creating now...\033[0m"
   mkdir -p $OUTPUT_DIR
 fi
 
