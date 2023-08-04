@@ -15,7 +15,9 @@ MINIGPT4_DIR=$MODEL_DIR/minigpt4
 OUTPUT_DIR=$MODEL_DIR/output
 # Create the directories if they do not already exist
 mkdir -p $LLAMA_DIR
-mkdir -p $OUTPUT_DIR
+if [ ! -d "$OUTPUT_DIR" ]; then
+  mkdir -p $OUTPUT_DIR
+fi
 
 # Download the original llama model weights
 download_all_urls $PWD/scripts/llama_urls.txt $LLAMA_DIR
